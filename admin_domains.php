@@ -1276,16 +1276,19 @@ if ($page == 'domains' || $page == 'overview') {
 
 					if ((int) Settings::Get('system.mod_fcgid') == 1 || (int) Settings::Get('phpfpm.enabled') == 1) {
 						$phpsettingid = (int) $_POST['phpsettingid'];
-						$phpsettingid_check_stmt = Database::prepare("
+						if($phpsettingid != '-1'){
+							$phpsettingid_check_stmt = Database::prepare("
 							SELECT * FROM `" . TABLE_PANEL_PHPCONFIGS . "` WHERE `id` = :phpid
 						");
-						$phpsettingid_check = Database::pexecute_first($phpsettingid_check_stmt, array(
-							'phpid' => $phpsettingid
-						));
+							$phpsettingid_check = Database::pexecute_first($phpsettingid_check_stmt, array(
+								'phpid' => $phpsettingid
+							));
 
-						if (! isset($phpsettingid_check['id']) || $phpsettingid_check['id'] == '0'  || $phpsettingid_check['id'] != '-1' || $phpsettingid_check['id'] != $phpsettingid) {
-							standard_error('phpsettingidwrong');
+							if (! isset($phpsettingid_check['id']) || $phpsettingid_check['id'] == '0'|| $phpsettingid_check['id'] != $phpsettingid) {
+								standard_error('phpsettingidwrong');
+							}
 						}
+
 
 						if ((int) Settings::Get('system.mod_fcgid') == 1) {
 							$mod_fcgid_starter = validate($_POST['mod_fcgid_starter'], 'mod_fcgid_starter', '/^[0-9]*$/', '', array(
