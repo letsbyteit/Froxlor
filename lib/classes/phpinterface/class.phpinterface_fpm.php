@@ -24,13 +24,13 @@ class phpinterface_fpm {
 	/**
 	 * Domain-Data array
 	 * @var array
-	*/
+	 */
 	private $_domain = array();
 
 	/**
 	 * Admin-Date cache array
 	 * @var array
-	*/
+	 */
 	private $_admin_cache = array();
 
 	/**
@@ -38,117 +38,117 @@ class phpinterface_fpm {
 	 * Mostly taken from http://php.net/manual/en/ini.list.php
 	 *
 	 * @var array
-	*/
+	 */
 	private $_ini = array(
-			'php_value' => array(
-				'auto_append_file',
-				'auto_prepend_file',
-				'date.timezone',
-				'default_charset',
-				'error_reporting',
-				'include_path',
-				'log_errors_max_len',
-				'mail.log',
-				'max_execution_time',
-				'session.cookie_domain',
-				'session.cookie_lifetime',
-				'session.cookie_path',
-				'session.name',
-				'session.serialize_handler',
-				'upload_max_filesize',
-				'xmlrpc_error_number',
-				'session.auto_start',
-				'always_populate_raw_post_data',
-				'suhosin.session.cryptkey',
-				'suhosin.session.cryptraddr',
-				'suhosin.session.checkraddr',
-				'suhosin.cookie.cryptkey',
-				'suhosin.cookie.plainlist',
-				'suhosin.cookie.cryptraddr',
-				'suhosin.cookie.checkraddr',
-				'suhosin.executor.func.blacklist',
-				'suhosin.executor.eval.whitelist'
-			),
-			'php_flag' => array(
-				'asp_tags',
-				'display_errors',
-				'display_startup_errors',
-				'html_errors',
-				'log_errors',
-				'magic_quotes_gpc',
-				'magic_quotes_runtime',
-				'magic_quotes_sybase',
-				'mail.add_x_header',
-				'session.cookie_secure',
-				'session.use_cookies',
-				'short_open_tag',
-				'track_errors',
-				'xmlrpc_errors',
-				'suhosin.simulation',
-				'suhosin.session.encrypt',
-				'suhosin.session.cryptua',
-				'suhosin.session.cryptdocroot',
-				'suhosin.cookie.encrypt',
-				'suhosin.cookie.cryptua',
-				'suhosin.cookie.cryptdocroot',
-				'suhosin.executor.disable_eval',
-				'mbstring.func_overload'
-			),
-			'php_admin_value' => array(
-				'cgi.redirect_status_env',
-				'date.timezone',
-				'disable_classes',
-				'disable_functions',
-				'error_log',
-				'gpc_order',
-				'max_input_time',
-				'max_input_vars',
-				'memory_limit',
-				'open_basedir',
-				'output_buffering',
-				'post_max_size',
-				'precision',
-				'sendmail_path',
-				'session.gc_divisor',
-				'session.gc_probability',
-				'variables_order',
-				'opcache.log_verbosity_level',
-				'opcache.restrict_api',
-				'opcache.revalidate_freq',
-				'opcache.max_accelerated_files',
-				'opcache.memory_consumption',
-				'opcache.interned_strings_buffer'
-			),
-			'php_admin_flag' => array(
-				'allow_call_time_pass_reference',
-				'allow_url_fopen',
-				'allow_url_include',
-				'auto_detect_line_endings',
-				'cgi.fix_pathinfo',
-				'cgi.force_redirect',
-				'enable_dl',
-				'expose_php',
-				'file_uploads',
-				'ignore_repeated_errors',
-				'ignore_repeated_source',
-				'log_errors',
-				'register_argc_argv',
-				'report_memleaks',
-				'opcache.enable',
-				'opcache.consistency_checks',
-				'opcache.dups_fix',
-				'opcache.load_comments',
-				'opcache.revalidate_path',
-				'opcache.save_comments',
-				'opcache.use_cwd',
-				'opcache.validate_timestamps',
-				'opcache.fast_shutdown'
-			)
+		'php_value' => array(
+			'auto_append_file',
+			'auto_prepend_file',
+			'date.timezone',
+			'default_charset',
+			'error_reporting',
+			'include_path',
+			'log_errors_max_len',
+			'mail.log',
+			'max_execution_time',
+			'session.cookie_domain',
+			'session.cookie_lifetime',
+			'session.cookie_path',
+			'session.name',
+			'session.serialize_handler',
+			'upload_max_filesize',
+			'xmlrpc_error_number',
+			'session.auto_start',
+			'always_populate_raw_post_data',
+			'suhosin.session.cryptkey',
+			'suhosin.session.cryptraddr',
+			'suhosin.session.checkraddr',
+			'suhosin.cookie.cryptkey',
+			'suhosin.cookie.plainlist',
+			'suhosin.cookie.cryptraddr',
+			'suhosin.cookie.checkraddr',
+			'suhosin.executor.func.blacklist',
+			'suhosin.executor.eval.whitelist'
+		),
+		'php_flag' => array(
+			'asp_tags',
+			'display_errors',
+			'display_startup_errors',
+			'html_errors',
+			'log_errors',
+			'magic_quotes_gpc',
+			'magic_quotes_runtime',
+			'magic_quotes_sybase',
+			'mail.add_x_header',
+			'session.cookie_secure',
+			'session.use_cookies',
+			'short_open_tag',
+			'track_errors',
+			'xmlrpc_errors',
+			'suhosin.simulation',
+			'suhosin.session.encrypt',
+			'suhosin.session.cryptua',
+			'suhosin.session.cryptdocroot',
+			'suhosin.cookie.encrypt',
+			'suhosin.cookie.cryptua',
+			'suhosin.cookie.cryptdocroot',
+			'suhosin.executor.disable_eval',
+			'mbstring.func_overload'
+		),
+		'php_admin_value' => array(
+			'cgi.redirect_status_env',
+			'date.timezone',
+			'disable_classes',
+			'disable_functions',
+			'error_log',
+			'gpc_order',
+			'max_input_time',
+			'max_input_vars',
+			'memory_limit',
+			'open_basedir',
+			'output_buffering',
+			'post_max_size',
+			'precision',
+			'sendmail_path',
+			'session.gc_divisor',
+			'session.gc_probability',
+			'variables_order',
+			'opcache.log_verbosity_level',
+			'opcache.restrict_api',
+			'opcache.revalidate_freq',
+			'opcache.max_accelerated_files',
+			'opcache.memory_consumption',
+			'opcache.interned_strings_buffer'
+		),
+		'php_admin_flag' => array(
+			'allow_call_time_pass_reference',
+			'allow_url_fopen',
+			'allow_url_include',
+			'auto_detect_line_endings',
+			'cgi.fix_pathinfo',
+			'cgi.force_redirect',
+			'enable_dl',
+			'expose_php',
+			'file_uploads',
+			'ignore_repeated_errors',
+			'ignore_repeated_source',
+			'log_errors',
+			'register_argc_argv',
+			'report_memleaks',
+			'opcache.enable',
+			'opcache.consistency_checks',
+			'opcache.dups_fix',
+			'opcache.load_comments',
+			'opcache.revalidate_path',
+			'opcache.save_comments',
+			'opcache.use_cwd',
+			'opcache.validate_timestamps',
+			'opcache.fast_shutdown'
+		)
 	);
 
 	/**
 	 * main constructor
-	*/
+	 */
 	public function __construct($domain) {
 		$this->_domain = $domain;
 	}
@@ -170,6 +170,7 @@ class phpinterface_fpm {
 			$fpm_max_spare_servers = (int)Settings::Get('phpfpm.max_spare_servers');
 			$fpm_requests = (int)Settings::Get('phpfpm.max_requests');
 			$fpm_process_idle_timeout = (int)Settings::Get('phpfpm.idle_timeout');
+			$fpm_status_path = Settings::Get('phpfpm.status_path');
 
 			if ($fpm_children == 0) {
 				$fpm_children = 1;
@@ -223,6 +224,10 @@ class phpinterface_fpm {
 
 			$fpm_config.= 'pm.max_requests = '.$fpm_requests."\n";
 
+
+			// Status Monitoring
+			$fpm_config.= 'pm.status_path = '.$fpm_status_path."\n";
+
 			// possible slowlog configs
 			if ($phpconfig['fpm_slowlog'] == '1') {
 				$fpm_config.= 'request_terminate_timeout = ' . $phpconfig['fpm_reqterm'] . "\n";
@@ -258,7 +263,7 @@ class phpinterface_fpm {
 					}
 
 					if ($this->_domain['openbasedir_path'] == '0'
-							&& strstr($this->_domain['documentroot'], ":") === false
+					    && strstr($this->_domain['documentroot'], ":") === false
 					) {
 						$openbasedir = appendOpenBasedirPath($this->_domain['documentroot'], true);
 					} else {
@@ -283,18 +288,18 @@ class phpinterface_fpm {
 
 			$admin = $this->_getAdminData($this->_domain['adminid']);
 			$php_ini_variables = array(
-					'SAFE_MODE' => 'Off', // keep this for compatibility, just in case
-					'PEAR_DIR' => Settings::Get('phpfpm.peardir'),
-					'TMP_DIR' => $this->getTempDir(),
-					'CUSTOMER_EMAIL' => $this->_domain['email'],
-					'ADMIN_EMAIL' => $admin['email'],
-					'DOMAIN' => $this->_domain['domain'],
-					'CUSTOMER' => $this->_domain['loginname'],
-					'ADMIN' => $admin['loginname'],
-					'OPEN_BASEDIR' => $openbasedir,
-					'OPEN_BASEDIR_C' => '',
-					'OPEN_BASEDIR_GLOBAL' => Settings::Get('system.phpappendopenbasedir'),
-					'DOCUMENT_ROOT' => makeCorrectDir($this->_domain['documentroot'])
+				'SAFE_MODE' => 'Off', // keep this for compatibility, just in case
+				'PEAR_DIR' => Settings::Get('phpfpm.peardir'),
+				'TMP_DIR' => $this->getTempDir(),
+				'CUSTOMER_EMAIL' => $this->_domain['email'],
+				'ADMIN_EMAIL' => $admin['email'],
+				'DOMAIN' => $this->_domain['domain'],
+				'CUSTOMER' => $this->_domain['loginname'],
+				'ADMIN' => $admin['loginname'],
+				'OPEN_BASEDIR' => $openbasedir,
+				'OPEN_BASEDIR_C' => '',
+				'OPEN_BASEDIR_GLOBAL' => Settings::Get('system.phpappendopenbasedir'),
+				'DOCUMENT_ROOT' => makeCorrectDir($this->_domain['documentroot'])
 			);
 
 			$phpini = replace_variables($phpconfig['phpsettings'], $php_ini_variables);

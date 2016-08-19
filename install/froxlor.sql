@@ -406,6 +406,7 @@ INSERT INTO `panel_settings` (`settinggroup`, `varname`, `value`) VALUES
 	('phpfpm', 'min_spare_servers', '5'),
 	('phpfpm', 'max_spare_servers', '35'),
 	('phpfpm', 'max_requests', '0'),
+	('phpfpm', 'status_path', 'status_php'),
 	('phpfpm', 'tmpdir', '/var/customers/tmp/'),
 	('phpfpm', 'peardir', '/usr/share/php/:/usr/share/php5/'),
 	('phpfpm', 'enabled_ownvhost', '0'),

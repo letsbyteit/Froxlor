@@ -145,6 +145,14 @@ return array(
 					'default' => 1,
 					'save_method' => 'storeSettingField'
 					),
+				'system_phpfpm_status_path' => array(
+					'label' => $lng['serversettings']['phpfpm_settings']['status_path'],
+					'settinggroup' => 'phpfpm',
+					'varname' => 'status_path',
+					'type' => 'string',
+					'default' => '/status_php',
+					'save_method' => 'storeSettingField'
+				),
 				'system_phpfpm_start_servers' => array(
 					'label' => $lng['serversettings']['phpfpm_settings']['start_servers'],
 					'settinggroup' => 'phpfpm',
