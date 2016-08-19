@@ -2011,6 +2011,8 @@ if ($page == 'domains' || $page == 'overview') {
 				$phpconfigs = '';
 				$phpconfigs_result_stmt = Database::query("SELECT * FROM `" . TABLE_PANEL_PHPCONFIGS . "`");
 
+				$phpconfigs .= makeoption("Disable PHP", -1);
+
 				while ($phpconfigs_row = $phpconfigs_result_stmt->fetch(PDO::FETCH_ASSOC)) {
 					$phpconfigs .= makeoption($phpconfigs_row['description'], $phpconfigs_row['id'], $result['phpsettingid'], true, true);
 				}

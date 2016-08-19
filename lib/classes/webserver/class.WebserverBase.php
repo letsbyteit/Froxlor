@@ -77,6 +77,18 @@ class WebserverBase {
 				$domains[$domain['domain']]['ssl_cert_chainfile'] = $ssl_ip['ssl_cert_chainfile'];
 
 			}
+
+			// Check whether the PHP-Config was set to -1
+			// If so, should for this domain php be disabled
+			$php = new phpinterface($domain);
+			$phpconfig = $php->getPhpConfig((int)$domains[$domain['phpsettingid']]);
+
+			if($phpconfig == -1){
+				// This domain should not use PHP, set the phpenabled flag to '0'
+				// so that every currently working web-server implementation will still work
+				$domains[$domain['phpenabled']] = '0';
+			}
+
 		}
 
 		return $domains;
