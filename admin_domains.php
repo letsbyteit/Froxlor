@@ -445,7 +445,7 @@ if ($page == 'domains' || $page == 'overview') {
 							'phpsettingid' => $phpsettingid
 						));
 
-						if (! isset($phpsettingid_check['id']) || $phpsettingid_check['id'] == '0' || $phpsettingid_check['id'] != $phpsettingid) {
+						if (! isset($phpsettingid_check['id']) || $phpsettingid_check['id'] == '0' || $phpsettingid_check['id'] != '-1' || $phpsettingid_check['id'] != $phpsettingid) {
 							standard_error('phpsettingidwrong');
 						}
 
@@ -1283,7 +1283,7 @@ if ($page == 'domains' || $page == 'overview') {
 							'phpid' => $phpsettingid
 						));
 
-						if (! isset($phpsettingid_check['id']) || $phpsettingid_check['id'] == '0' || $phpsettingid_check['id'] != $phpsettingid) {
+						if (! isset($phpsettingid_check['id']) || $phpsettingid_check['id'] == '0'  || $phpsettingid_check['id'] != '-1' || $phpsettingid_check['id'] != $phpsettingid) {
 							standard_error('phpsettingidwrong');
 						}
 
