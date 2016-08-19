@@ -81,12 +81,12 @@ class WebserverBase {
 			// Check whether the PHP-Config was set to -1
 			// If so, should for this domain php be disabled
 			$php = new phpinterface($domain);
-			$phpconfig = $php->getPhpConfig((int)$domains[$domain['phpsettingid']]);
+			$phpconfig = $php->getPhpConfig((int)$domain['phpsettingid']);
 
 			if($phpconfig == -1){
 				// This domain should not use PHP, set the phpenabled flag to '0'
 				// so that every currently working web-server implementation will still work
-				$domains[$domain['phpenabled']] = '0';
+				$domain['phpenabled'] = '0';
 			}
 
 		}
